@@ -1,0 +1,51 @@
+<% var args = {
+  pagename : 'archive'
+} %>
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<%- include('inc/_meta', args) %>
+</head>
+
+<body id="pagetop">
+
+<%- include('inc/_header',args) %>
+
+  <main class="main">
+
+    <h1>Blog<span>ブログ</span></h1>
+
+    <ul class="yearList">
+      <li class="yearList_item"><a href="" class="yearList_link">2017</a></li>
+      <li class="yearList_item"><a href="" class="yearList_link">2016</a></li>
+    </ul>
+
+    <ul class="blogList">
+      <% for (var i = 10; i > 0; i--) { %>
+      <li class="blogList_item"><section>
+        <a href="" class="blogList_link">
+          <div class="blogList_data">
+            <p class="blogList_date">2017.01.10</p>
+            <p class="blogList_cateogry">日記</p>
+            <h2 class="blogList_title">スパークありがとうございました</h2>
+            <p class="blogList_content">それはもうすごい真田だった。真田が真田で、なんだったらそれはとても真田でした。</p>
+          </div>
+        </a>
+      </section></li>
+      <% } %>
+    </ul>
+
+    <a href="">次のページへ</a>
+
+  </main>
+
+  <div class="controls">
+    <a href="#pagetop" class="controls_item"><img src="" alt="ページの上部にもどる"></a>
+    <a href="#searchBox" class="controls_item"><img src="" alt="コンテンツを検索する"></a>
+  </div>
+
+</body>
+
+</html>

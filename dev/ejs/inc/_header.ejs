@@ -1,0 +1,53 @@
+<%
+var pagename, headerTitleTag, root;
+if (pagename === 'undefined') { pagename = 'top'; }
+if (root === 'undefined') { root = ''; }
+if (pagename === 'top' ) {
+  headerTitleTag = 'h1'
+} else {
+  headerTitleTag = 'div'
+}
+%>
+
+<header class="header">
+  <<%- headerTitleTag %> class="logo"><img src="" alt="真性エーテル欠乏症"></<%- headerTitleTag %>>
+  <div class="toggleButton">
+    <span class="toggleButton_line"></span>
+    <span class="toggleButton_line"></span>
+    <span class="toggleButton_line"></span>
+  </div>
+  <div class="toggleContents">
+    <ul class="globalNavigation">
+      <li class="globalNavigation_item"><a href="/fic/" class="globalNavigation_link">Fictions<span>小説</span></a></li>
+      <li class="globalNavigation_item"><a href="/pic/" class="globalNavigation_link">Pictures<span>イラスト</span></a></li>
+      <li class="globalNavigation_item"><a href="/offline/" class="globalNavigation_link">Offline<span>オフライン情報</span></a></li>
+      <li class="globalNavigation_item"><a href="/blog/" class="globalNavigation_link">Blog<span>ブログ</span></a></li>
+      <li class="globalNavigation_item"><a href="/#author" class="globalNavigation_link">Author<span>作者</span></a></li>
+      <li class="globalNavigation_item"><a href="/#contact" class="globalNavigation_link">Contact<span>お問い合わせ</span></a></li>
+    </ul>
+    <form action="" class="searchBox" id="searchBox">
+      <input type="text" name="s" placeholder="キーワード">
+      <!-- <dl class="searchBox_item">
+        <dt class="searchBox_name">ジャンル</dt>
+        <dd class="searchBox_content">
+          <select name="genre">
+            <option>テニスの王子様</option>
+            <option>遙かなる時空の中で</option>
+          </select>
+        </dd>
+      </dl> -->
+      <dl class="searchBox_item">
+        <dt class="searchBox_name">形式</dt>
+        <dd class="searchBox_content">
+          <input type="checkbox" name="format" id="formatFic"><label for="formatFic">小説</label>
+          <input type="checkbox" name="format" id="formatPic"><label for="formatPic">イラスト</label>
+        </dd>
+      </dl>
+      <p class="searchBox_actions">
+        <input type="submit" name="actionSubmit" value="検索">
+        <input type="button" name="actionClear" value="クリア">
+      </p>
+    </form>
+  </div>
+</header>
+

@@ -1,0 +1,13 @@
+<%
+var root, pagename, index;
+if (root === 'undefined') { root = ''; }
+if (pagename !== 'undefined') {
+  if (pagename === 'top') { pagename = 'index'; }
+}
+%>
+  <meta charset="UTF-8">
+  <title><%- site[pagename].title %></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="/assets/css/common.css">

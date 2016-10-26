@@ -1,0 +1,101 @@
+//clearfix
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//media
+
+// original mixin
+// breakpoint width
+//sp 414x736
+//tablet 768x1024
+$bpFull: 1200px;
+$bpPC: 1000px;
+$bpTB: 768px;
+$bpSP: 767px;
+
+// breakpoint {sp,tablet,pc,full}
+// @include media(sp){}
+@mixin media($point) {
+  @if $point == tablet {
+    @media print, screen and (min-width: $bpTB)  { @content ; }
+  }
+  @else if $point == pc {
+    @media print, screen and (min-width: $bpPC) { @content ; }
+  }
+  @else if $point == full {
+    @media print, screen and (min-width: $bpFull) { @content ; }
+  }
+  @else if $point == both {
+    @media print, screen and (min-width: 769px) { @content ; }
+  }
+  @else if $point == sp {
+    @media print, screen and (max-width: 768px)  { @content ; }
+  }
+  @else if $point == smallsp {
+    @media print, screen and (max-width: 320px)  { @content ; }
+  }
+  @else {
+    @media print, screen and (min-width: $point) { @content ; }
+  }
+}
+
+//sprite for Retina*2
+@mixin sprite-width($sprite, $x:auto) {
+  @if $x == normal {
+    width: nth($sprite, 5);
+  } @else {
+    width: nth($sprite, 5) / 2;
+  }
+}
+
+@mixin sprite-height($sprite, $x:auto) {
+  @if $x == normal {
+    height: nth($sprite, 6);
+  } @else {
+    height: nth($sprite, 6) / 2;
+  }
+}
+
+@mixin sprite-position($sprite, $x:auto) {
+  @if $x == normal {
+    $sprite-offset-x: nth($sprite, 3);
+    $sprite-offset-y: nth($sprite, 4);
+    background-position: $sprite-offset-x  $sprite-offset-y;
+  } @else {
+    $sprite-offset-x: nth($sprite, 3)/2;
+    $sprite-offset-y: nth($sprite, 4)/2;
+    background-position: $sprite-offset-x  $sprite-offset-y;
+  }
+}
+
+
+// background-size
+@mixin sprite-size($sprite, $x:auto) {
+  @if $x == normal {
+    background-size: nth($sprite, 7) nth($sprite, 8);
+  } @else {
+    background-size: nth($sprite, 7)/2 nth($sprite, 8)/2;
+  }
+}
+
+// sprite reset
+@mixin sprite($sprite, $x:x2) {
+  @if $x == normal {
+    @include sprite-image($sprite);
+    @include sprite-position($sprite, normal);
+    @include sprite-width($sprite, normal);
+    @include sprite-height($sprite, normal);
+    @include sprite-size($sprite, normal);
+  } @else {
+    @include sprite-image($sprite);
+    @include sprite-position($sprite);
+    @include sprite-width($sprite);
+    @include sprite-height($sprite);
+    @include sprite-size($sprite);
+  }
+}

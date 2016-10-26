@@ -1,0 +1,96 @@
+<% var args = {
+  pagename : 'top'
+} %>
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<%- include('inc/_meta', args) %>
+</head>
+
+<body id="pagetop">
+
+<%- include('inc/_header',args) %>
+
+  <main class="main">
+
+    <div class="noticeWrap">
+      <div class="notice">
+        <p class="notice_item"><a href="" class="notice_link"><img src="" alt="2017年4月2日 新暴れん坊王子7発刊 『エーテル欠乏症』幸村×真田" class="notice_image"></a></p>
+        <p class="notice_item"><a href="" class="notice_link"><img src="" alt="春コミ発刊 『観赤合同誌』観月×赤澤" class="notice_image"></a></p>
+      </div>
+    </div>
+
+    <a class="button-em">オフライン情報</a>
+
+    <section>
+      <h2>Latest Fiction<span>新着小説</span></h2>
+      <ul class="list">
+        <li class="list_item"><a href="" class="list_link">
+          <div class="list_data">
+            <p class="list_date">2017.01.10</p>
+            <p class="list_series">エーテル欠乏症</p>
+            <p class="list_title">陽炎のうつしび</p>
+            <p class="list_content">あと何時も持つまい。いずれ蕩けて消えてしまうと言うのならば、いっそこの手で何もなかったことにしてしまおう。</p>
+            <p class="list_tag">幸真, 幸村精市, 真田弦一郎</p>
+          </div>
+        </a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Latest Picture<span>新着イラスト</span></h2>
+      <ul class="list">
+        <li class="list_item"><a href="" class="list_link">
+          <p class="list_image"><img src="" alt=""></p>
+          <div class="list_data">
+            <p class="list_date">2017.01.10</p>
+            <p class="list_title">陽炎のうつしび</p>
+            <p class="list_tag">幸真, 幸村精市, 真田弦一郎</p>
+          </div>
+        </a></li>
+      </ul>
+    </section>
+
+    <section id="author">
+      <h2>Author<span>作者</span></h2>
+      <dl class="profile">
+        <dt class="profile_name">眞白マサキ<span>Mashiro Masaki</span></dt>
+        <dd class="profile_content">幸村精市が宇宙。そして吸引力の変わらないただひとつの観月はじめ。葡萄が好き。</dd>
+      </dl>
+    </section>
+
+    <section id="contact">
+      <h2>Contact<span>お問い合わせ</span></h2>
+      <form action="" class="contactForm">
+        <dl class="contactForm_item">
+          <dt class="contactForm_name">お名前</dt>
+          <dd class="contactForm_content">
+            <input type="text" name="contactFormName">
+          </dd>
+        </dl>
+        <dl class="contactForm_item">
+          <dt class="contactForm_name">メールアドレス</dt>
+          <dd class="contactForm_content">
+            <input type="text" name="contactFormMail">
+          </dd>
+        </dl>
+        <dl class="contactForm_item">
+          <dt class="contactForm_name">本文</dt>
+          <dd class="contactForm_content">
+            <input type="text" name="contactFormBody">
+          </dd>
+        </dl>
+        <p class="contactForm_actions">
+          <input type="submit" name="actionSubmit" value="送信">
+          <input type="button" name="actionClear" value="クリア">
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+</body>
+
+</html>

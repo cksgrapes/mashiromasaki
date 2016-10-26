@@ -1,0 +1,45 @@
+<% var args = {
+  pagename : 'archive'
+} %>
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<%- include('inc/_meta', args) %>
+</head>
+
+<body id="pagetop">
+
+<%- include('inc/_header',args) %>
+
+  <main class="main">
+
+    <h1>Offline<span>オフライン情報</span></h1>
+
+    <ul class="card">
+      <% for (var i = 10; i > 0; i--) { %>
+      <li class="card_item">
+        <p class="card_image"><img src="" alt=""></p>
+        <div class="card_data">
+          <p class="card_title">陽炎のうつしび</p>
+          <p class="card_tag">幸真, 幸村精市, 真田弦一郎</p>
+          <p class="card_date">2017年4月2日発行</p>
+        </div>
+        <a href="" class="card_link">詳細を見る</a>
+      </li>
+      <% } %>
+    </ul>
+
+    <a href="">次のページへ</a>
+
+  </main>
+
+  <div class="controls">
+    <a href="#pagetop" class="controls_item"><img src="" alt="ページの上部にもどる"></a>
+    <a href="#searchBox" class="controls_item"><img src="" alt="コンテンツを検索する"></a>
+  </div>
+
+</body>
+
+</html>

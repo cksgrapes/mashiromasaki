@@ -1,0 +1,74 @@
+<% var args = {
+  pagename : 'single'
+} %>
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<%- include('inc/_meta', args) %>
+</head>
+
+<body id="pagetop">
+
+<%- include('inc/_header',args) %>
+
+  <main class="main">
+
+    <div class="freeArea">
+      <img src="" alt="企画概要いろいろ書いたようなイラストをバーンと貼りたい">
+    </div>
+
+    <div class="bookData">
+      <div class="bookData_image">
+        <img src="" alt="表紙画像">
+      </div>
+      <div class="bookData_body">
+        <h1 class="bookData_title">エーテル欠乏症</h1>
+        <p class="bookData_slash">幸村×真田（テニスの王子様）</p>
+        <dl class="bookData_item">
+          <dt class="bookData_item_name">ページ数</dt>
+          <dd class="bookData_item_content">100ページ</dd>
+        </dl>
+        <dl class="bookData_item">
+          <dt class="bookData_item_name">発行日</dt>
+          <dd class="bookData_item_content">2017年4月2日</dd>
+        </dl>
+        <dl class="bookData_item">
+          <dt class="bookData_item_name">発行イベント</dt>
+          <dd class="bookData_item_content">新暴れん坊王子7</dd>
+        </dl>
+      </div>
+    </div>
+
+    <section id="series">
+      <h2>シリーズ</h2>
+      <ul class="card">
+        <% for (var i = 3; i > 0; i--) { %>
+        <li class="card_item">
+          <p class="card_image"><img src="" alt=""></p>
+          <div class="card_data">
+            <p class="card_title">陽炎のうつしび</p>
+            <p class="card_tag">幸真, 幸村精市, 真田弦一郎</p>
+            <p class="card_date">2017年4月2日発行</p>
+          </div>
+          <a href="" class="card_link">詳細を見る</a>
+        </li>
+        <% } %>
+      </ul>
+    </section>
+
+    <div class="navigation">
+      <a href="" class="navigation_item">オフライン情報一覧を見る</a>
+    </div>
+
+  </main>
+
+  <div class="controls">
+    <a href="#pagetop" class="controls_item"><img src="" alt="ページの上部にもどる"></a>
+    <a href="#searchBox" class="controls_item"><img src="" alt="コンテンツを検索する"></a>
+  </div>
+
+</body>
+
+</html>

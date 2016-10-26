@@ -1,0 +1,404 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$bg-crumbs-name: 'bg_crumbs';
+$bg-crumbs-x: 0px;
+$bg-crumbs-y: 0px;
+$bg-crumbs-offset-x: 0px;
+$bg-crumbs-offset-y: 0px;
+$bg-crumbs-width: 32px;
+$bg-crumbs-height: 100px;
+$bg-crumbs-total-width: 248px;
+$bg-crumbs-total-height: 235px;
+$bg-crumbs-image: '../img/sprite.png';
+$bg-crumbs: (0px, 0px, 0px, 0px, 32px, 100px, 248px, 235px, '../img/sprite.png', 'bg_crumbs', );
+$bg-pc-crumbs-name: 'bg_pc_crumbs';
+$bg-pc-crumbs-x: 185px;
+$bg-pc-crumbs-y: 102px;
+$bg-pc-crumbs-offset-x: -185px;
+$bg-pc-crumbs-offset-y: -102px;
+$bg-pc-crumbs-width: 16px;
+$bg-pc-crumbs-height: 40px;
+$bg-pc-crumbs-total-width: 248px;
+$bg-pc-crumbs-total-height: 235px;
+$bg-pc-crumbs-image: '../img/sprite.png';
+$bg-pc-crumbs: (185px, 102px, -185px, -102px, 16px, 40px, 248px, 235px, '../img/sprite.png', 'bg_pc_crumbs', );
+$icon-chevron-right-name: 'icon_chevron_right';
+$icon-chevron-right-x: 228px;
+$icon-chevron-right-y: 35px;
+$icon-chevron-right-offset-x: -228px;
+$icon-chevron-right-offset-y: -35px;
+$icon-chevron-right-width: 16px;
+$icon-chevron-right-height: 24px;
+$icon-chevron-right-total-width: 248px;
+$icon-chevron-right-total-height: 235px;
+$icon-chevron-right-image: '../img/sprite.png';
+$icon-chevron-right: (228px, 35px, -228px, -35px, 16px, 24px, 248px, 235px, '../img/sprite.png', 'icon_chevron_right', );
+$icon-chevron-right-02-name: 'icon_chevron_right_02';
+$icon-chevron-right-02-x: 228px;
+$icon-chevron-right-02-y: 152px;
+$icon-chevron-right-02-offset-x: -228px;
+$icon-chevron-right-02-offset-y: -152px;
+$icon-chevron-right-02-width: 12px;
+$icon-chevron-right-02-height: 18px;
+$icon-chevron-right-02-total-width: 248px;
+$icon-chevron-right-02-total-height: 235px;
+$icon-chevron-right-02-image: '../img/sprite.png';
+$icon-chevron-right-02: (228px, 152px, -228px, -152px, 12px, 18px, 248px, 235px, '../img/sprite.png', 'icon_chevron_right_02', );
+$icon-chevron-right-03-name: 'icon_chevron_right_03';
+$icon-chevron-right-03-x: 228px;
+$icon-chevron-right-03-y: 74px;
+$icon-chevron-right-03-offset-x: -228px;
+$icon-chevron-right-03-offset-y: -74px;
+$icon-chevron-right-03-width: 16px;
+$icon-chevron-right-03-height: 24px;
+$icon-chevron-right-03-total-width: 248px;
+$icon-chevron-right-03-total-height: 235px;
+$icon-chevron-right-03-image: '../img/sprite.png';
+$icon-chevron-right-03: (228px, 74px, -228px, -74px, 16px, 24px, 248px, 235px, '../img/sprite.png', 'icon_chevron_right_03', );
+$icon-chevron-right-04-name: 'icon_chevron_right_04';
+$icon-chevron-right-04-x: 0px;
+$icon-chevron-right-04-y: 217px;
+$icon-chevron-right-04-offset-x: 0px;
+$icon-chevron-right-04-offset-y: -217px;
+$icon-chevron-right-04-width: 10px;
+$icon-chevron-right-04-height: 18px;
+$icon-chevron-right-04-total-width: 248px;
+$icon-chevron-right-04-total-height: 235px;
+$icon-chevron-right-04-image: '../img/sprite.png';
+$icon-chevron-right-04: (0px, 217px, 0px, -217px, 10px, 18px, 248px, 235px, '../img/sprite.png', 'icon_chevron_right_04', );
+$icon-chevron-right-05-name: 'icon_chevron_right_05';
+$icon-chevron-right-05-x: 228px;
+$icon-chevron-right-05-y: 113px;
+$icon-chevron-right-05-offset-x: -228px;
+$icon-chevron-right-05-offset-y: -113px;
+$icon-chevron-right-05-width: 14px;
+$icon-chevron-right-05-height: 24px;
+$icon-chevron-right-05-total-width: 248px;
+$icon-chevron-right-05-total-height: 235px;
+$icon-chevron-right-05-image: '../img/sprite.png';
+$icon-chevron-right-05: (228px, 113px, -228px, -113px, 14px, 24px, 248px, 235px, '../img/sprite.png', 'icon_chevron_right_05', );
+$icon-chevron-right-06-name: 'icon_chevron_right_06';
+$icon-chevron-right-06-x: 185px;
+$icon-chevron-right-06-y: 0px;
+$icon-chevron-right-06-offset-x: -185px;
+$icon-chevron-right-06-offset-y: 0px;
+$icon-chevron-right-06-width: 28px;
+$icon-chevron-right-06-height: 44px;
+$icon-chevron-right-06-total-width: 248px;
+$icon-chevron-right-06-total-height: 235px;
+$icon-chevron-right-06-image: '../img/sprite.png';
+$icon-chevron-right-06: (185px, 0px, -185px, 0px, 28px, 44px, 248px, 235px, '../img/sprite.png', 'icon_chevron_right_06', );
+$icon-close-name: 'icon_close';
+$icon-close-x: 122px;
+$icon-close-y: 0px;
+$icon-close-offset-x: -122px;
+$icon-close-offset-y: 0px;
+$icon-close-width: 48px;
+$icon-close-height: 48px;
+$icon-close-total-width: 248px;
+$icon-close-total-height: 235px;
+$icon-close-image: '../img/sprite.png';
+$icon-close: (122px, 0px, -122px, 0px, 48px, 48px, 248px, 235px, '../img/sprite.png', 'icon_close', );
+$icon-download-name: 'icon_download';
+$icon-download-x: 96px;
+$icon-download-y: 170px;
+$icon-download-offset-x: -96px;
+$icon-download-offset-y: -170px;
+$icon-download-width: 20px;
+$icon-download-height: 26px;
+$icon-download-total-width: 248px;
+$icon-download-total-height: 235px;
+$icon-download-image: '../img/sprite.png';
+$icon-download: (96px, 170px, -96px, -170px, 20px, 26px, 248px, 235px, '../img/sprite.png', 'icon_download', );
+$icon-download-02-name: 'icon_download_02';
+$icon-download-02-x: 120px;
+$icon-download-02-y: 115px;
+$icon-download-02-offset-x: -120px;
+$icon-download-02-offset-y: -115px;
+$icon-download-02-width: 34px;
+$icon-download-02-height: 40px;
+$icon-download-02-total-width: 248px;
+$icon-download-02-total-height: 235px;
+$icon-download-02-image: '../img/sprite.png';
+$icon-download-02: (120px, 115px, -120px, -115px, 34px, 40px, 248px, 235px, '../img/sprite.png', 'icon_download_02', );
+$icon-external-name: 'icon_external';
+$icon-external-x: 228px;
+$icon-external-y: 0px;
+$icon-external-offset-x: -228px;
+$icon-external-offset-y: 0px;
+$icon-external-width: 20px;
+$icon-external-height: 20px;
+$icon-external-total-width: 248px;
+$icon-external-total-height: 235px;
+$icon-external-image: '../img/sprite.png';
+$icon-external: (228px, 0px, -228px, 0px, 20px, 20px, 248px, 235px, '../img/sprite.png', 'icon_external', );
+$icon-external-02-name: 'icon_external_02';
+$icon-external-02-x: 171px;
+$icon-external-02-y: 170px;
+$icon-external-02-offset-x: -171px;
+$icon-external-02-offset-y: -170px;
+$icon-external-02-width: 20px;
+$icon-external-02-height: 20px;
+$icon-external-02-total-width: 248px;
+$icon-external-02-total-height: 235px;
+$icon-external-02-image: '../img/sprite.png';
+$icon-external-02: (171px, 170px, -171px, -170px, 20px, 20px, 248px, 235px, '../img/sprite.png', 'icon_external_02', );
+$icon-mail-name: 'icon_mail';
+$icon-mail-x: 47px;
+$icon-mail-y: 170px;
+$icon-mail-offset-x: -47px;
+$icon-mail-offset-y: -170px;
+$icon-mail-width: 34px;
+$icon-mail-height: 28px;
+$icon-mail-total-width: 248px;
+$icon-mail-total-height: 235px;
+$icon-mail-image: '../img/sprite.png';
+$icon-mail: (47px, 170px, -47px, -170px, 34px, 28px, 248px, 235px, '../img/sprite.png', 'icon_mail', );
+$icon-mail-02-name: 'icon_mail_02';
+$icon-mail-02-x: 0px;
+$icon-mail-02-y: 115px;
+$icon-mail-02-offset-x: 0px;
+$icon-mail-02-offset-y: -115px;
+$icon-mail-02-width: 50px;
+$icon-mail-02-height: 40px;
+$icon-mail-02-total-width: 248px;
+$icon-mail-02-total-height: 235px;
+$icon-mail-02-image: '../img/sprite.png';
+$icon-mail-02: (0px, 115px, 0px, -115px, 50px, 40px, 248px, 235px, '../img/sprite.png', 'icon_mail_02', );
+$icon-mail-03-name: 'icon_mail_03';
+$icon-mail-03-x: 122px;
+$icon-mail-03-y: 63px;
+$icon-mail-03-offset-x: -122px;
+$icon-mail-03-offset-y: -63px;
+$icon-mail-03-width: 40px;
+$icon-mail-03-height: 32px;
+$icon-mail-03-total-width: 248px;
+$icon-mail-03-total-height: 235px;
+$icon-mail-03-image: '../img/sprite.png';
+$icon-mail-03: (122px, 63px, -122px, -63px, 40px, 32px, 248px, 235px, '../img/sprite.png', 'icon_mail_03', );
+$icon-mail-04-name: 'icon_mail_04';
+$icon-mail-04-x: 47px;
+$icon-mail-04-y: 55px;
+$icon-mail-04-offset-x: -47px;
+$icon-mail-04-offset-y: -55px;
+$icon-mail-04-width: 50px;
+$icon-mail-04-height: 40px;
+$icon-mail-04-total-width: 248px;
+$icon-mail-04-total-height: 235px;
+$icon-mail-04-image: '../img/sprite.png';
+$icon-mail-04: (47px, 55px, -47px, -55px, 50px, 40px, 248px, 235px, '../img/sprite.png', 'icon_mail_04', );
+$icon-menu-name: 'icon_menu';
+$icon-menu-x: 47px;
+$icon-menu-y: 0px;
+$icon-menu-offset-x: -47px;
+$icon-menu-offset-y: 0px;
+$icon-menu-width: 60px;
+$icon-menu-height: 40px;
+$icon-menu-total-width: 248px;
+$icon-menu-total-height: 235px;
+$icon-menu-image: '../img/sprite.png';
+$icon-menu: (47px, 0px, -47px, 0px, 60px, 40px, 248px, 235px, '../img/sprite.png', 'icon_menu', );
+$icon-pc-chevron-top-name: 'icon_pc_chevron_top';
+$icon-pc-chevron-top-x: 129px;
+$icon-pc-chevron-top-y: 217px;
+$icon-pc-chevron-top-offset-x: -129px;
+$icon-pc-chevron-top-offset-y: -217px;
+$icon-pc-chevron-top-width: 9px;
+$icon-pc-chevron-top-height: 6px;
+$icon-pc-chevron-top-total-width: 248px;
+$icon-pc-chevron-top-total-height: 235px;
+$icon-pc-chevron-top-image: '../img/sprite.png';
+$icon-pc-chevron-top: (129px, 217px, -129px, -217px, 9px, 6px, 248px, 235px, '../img/sprite.png', 'icon_pc_chevron_top', );
+$icon-pc-external-name: 'icon_pc_external';
+$icon-pc-external-x: 206px;
+$icon-pc-external-y: 170px;
+$icon-pc-external-offset-x: -206px;
+$icon-pc-external-offset-y: -170px;
+$icon-pc-external-width: 7px;
+$icon-pc-external-height: 7px;
+$icon-pc-external-total-width: 248px;
+$icon-pc-external-total-height: 235px;
+$icon-pc-external-image: '../img/sprite.png';
+$icon-pc-external: (206px, 170px, -206px, -170px, 7px, 7px, 248px, 235px, '../img/sprite.png', 'icon_pc_external', );
+$icon-pc-external-02-name: 'icon_pc_external_02';
+$icon-pc-external-02-x: 106px;
+$icon-pc-external-02-y: 217px;
+$icon-pc-external-02-offset-x: -106px;
+$icon-pc-external-02-offset-y: -217px;
+$icon-pc-external-02-width: 8px;
+$icon-pc-external-02-height: 8px;
+$icon-pc-external-02-total-width: 248px;
+$icon-pc-external-02-total-height: 235px;
+$icon-pc-external-02-image: '../img/sprite.png';
+$icon-pc-external-02: (106px, 217px, -106px, -217px, 8px, 8px, 248px, 235px, '../img/sprite.png', 'icon_pc_external_02', );
+$icon-pc-mail-name: 'icon_pc_mail';
+$icon-pc-mail-x: 52px;
+$icon-pc-mail-y: 217px;
+$icon-pc-mail-offset-x: -52px;
+$icon-pc-mail-offset-y: -217px;
+$icon-pc-mail-width: 12px;
+$icon-pc-mail-height: 10px;
+$icon-pc-mail-total-width: 248px;
+$icon-pc-mail-total-height: 235px;
+$icon-pc-mail-image: '../img/sprite.png';
+$icon-pc-mail: (52px, 217px, -52px, -217px, 12px, 10px, 248px, 235px, '../img/sprite.png', 'icon_pc_mail', );
+$icon-pc-mail-02-name: 'icon_pc_mail_02';
+$icon-pc-mail-02-x: 79px;
+$icon-pc-mail-02-y: 217px;
+$icon-pc-mail-02-offset-x: -79px;
+$icon-pc-mail-02-offset-y: -217px;
+$icon-pc-mail-02-width: 12px;
+$icon-pc-mail-02-height: 10px;
+$icon-pc-mail-02-total-width: 248px;
+$icon-pc-mail-02-total-height: 235px;
+$icon-pc-mail-02-image: '../img/sprite.png';
+$icon-pc-mail-02: (79px, 217px, -79px, -217px, 12px, 10px, 248px, 235px, '../img/sprite.png', 'icon_pc_mail_02', );
+$icon-pc-mail-03-name: 'icon_pc_mail_03';
+$icon-pc-mail-03-x: 131px;
+$icon-pc-mail-03-y: 170px;
+$icon-pc-mail-03-offset-x: -131px;
+$icon-pc-mail-03-offset-y: -170px;
+$icon-pc-mail-03-width: 25px;
+$icon-pc-mail-03-height: 20px;
+$icon-pc-mail-03-total-width: 248px;
+$icon-pc-mail-03-total-height: 235px;
+$icon-pc-mail-03-image: '../img/sprite.png';
+$icon-pc-mail-03: (131px, 170px, -131px, -170px, 25px, 20px, 248px, 235px, '../img/sprite.png', 'icon_pc_mail_03', );
+$icon-pc-tel-name: 'icon_pc_tel';
+$icon-pc-tel-x: 228px;
+$icon-pc-tel-y: 185px;
+$icon-pc-tel-offset-x: -228px;
+$icon-pc-tel-offset-y: -185px;
+$icon-pc-tel-width: 12px;
+$icon-pc-tel-height: 12px;
+$icon-pc-tel-total-width: 248px;
+$icon-pc-tel-total-height: 235px;
+$icon-pc-tel-image: '../img/sprite.png';
+$icon-pc-tel: (228px, 185px, -228px, -185px, 12px, 12px, 248px, 235px, '../img/sprite.png', 'icon_pc_tel', );
+$icon-pc-tel-02-name: 'icon_pc_tel_02';
+$icon-pc-tel-02-x: 25px;
+$icon-pc-tel-02-y: 217px;
+$icon-pc-tel-02-offset-x: -25px;
+$icon-pc-tel-02-offset-y: -217px;
+$icon-pc-tel-02-width: 12px;
+$icon-pc-tel-02-height: 12px;
+$icon-pc-tel-02-total-width: 248px;
+$icon-pc-tel-02-total-height: 235px;
+$icon-pc-tel-02-image: '../img/sprite.png';
+$icon-pc-tel-02: (25px, 217px, -25px, -217px, 12px, 12px, 248px, 235px, '../img/sprite.png', 'icon_pc_tel_02', );
+$icon-tel-name: 'icon_tel';
+$icon-tel-x: 185px;
+$icon-tel-y: 59px;
+$icon-tel-offset-x: -185px;
+$icon-tel-offset-y: -59px;
+$icon-tel-width: 28px;
+$icon-tel-height: 28px;
+$icon-tel-total-width: 248px;
+$icon-tel-total-height: 235px;
+$icon-tel-image: '../img/sprite.png';
+$icon-tel: (185px, 59px, -185px, -59px, 28px, 28px, 248px, 235px, '../img/sprite.png', 'icon_tel', );
+$icon-tel-02-name: 'icon_tel_02';
+$icon-tel-02-x: 65px;
+$icon-tel-02-y: 115px;
+$icon-tel-02-offset-x: -65px;
+$icon-tel-02-offset-y: -115px;
+$icon-tel-02-width: 40px;
+$icon-tel-02-height: 40px;
+$icon-tel-02-total-width: 248px;
+$icon-tel-02-total-height: 235px;
+$icon-tel-02-image: '../img/sprite.png';
+$icon-tel-02: (65px, 115px, -65px, -115px, 40px, 40px, 248px, 235px, '../img/sprite.png', 'icon_tel_02', );
+$icon-tel-03-name: 'icon_tel_03';
+$icon-tel-03-x: 0px;
+$icon-tel-03-y: 170px;
+$icon-tel-03-offset-x: 0px;
+$icon-tel-03-offset-y: -170px;
+$icon-tel-03-width: 32px;
+$icon-tel-03-height: 32px;
+$icon-tel-03-total-width: 248px;
+$icon-tel-03-total-height: 235px;
+$icon-tel-03-image: '../img/sprite.png';
+$icon-tel-03: (0px, 170px, 0px, -170px, 32px, 32px, 248px, 235px, '../img/sprite.png', 'icon_tel_03', );
+$spritesheet-width: 248px;
+$spritesheet-height: 235px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($bg-crumbs, $bg-pc-crumbs, $icon-chevron-right, $icon-chevron-right-02, $icon-chevron-right-03, $icon-chevron-right-04, $icon-chevron-right-05, $icon-chevron-right-06, $icon-close, $icon-download, $icon-download-02, $icon-external, $icon-external-02, $icon-mail, $icon-mail-02, $icon-mail-03, $icon-mail-04, $icon-menu, $icon-pc-chevron-top, $icon-pc-external, $icon-pc-external-02, $icon-pc-mail, $icon-pc-mail-02, $icon-pc-mail-03, $icon-pc-tel, $icon-pc-tel-02, $icon-tel, $icon-tel-02, $icon-tel-03, );
+$spritesheet: (248px, 235px, '../img/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
