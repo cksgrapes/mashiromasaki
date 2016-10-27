@@ -930,8 +930,14 @@ a {
 }
 
 .logo {
+	width: 280px;
 	margin: 0 auto;
-	padding: 60px 30px 50px;
+	padding: 30px;
+}
+
+.index .logo {
+	width: auto;
+	padding: 60px 30px 40px;
 }
 
 .toggleArea {
@@ -1139,8 +1145,8 @@ a {
 
 @media print, screen and (min-width: 568px) {
 
-.logo {
-	width: 80%;
+.index .logo {
+	width: 60%;
 }
 
 .toggleArea {
@@ -1190,7 +1196,8 @@ a {
 }
 
 .logo {
-	padding: 100px 30px 100px;
+	width: 320px;
+	padding: 40px 30px;
 }
 
 .toggleArea {

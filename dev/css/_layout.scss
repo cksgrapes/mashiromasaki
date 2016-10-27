@@ -17,13 +17,19 @@
 
 .logo {
   margin: 0 auto;
-  padding: 60px 30px 50px;
-  @include media(568px) {
-    width: 80%;
-  }
+  padding: 30px;
+  width: 280px;
   @include media(both) {
-    padding: 100px 30px 100px;
+    width: 320px;
+    padding: 40px 30px;
   }
+  .index & {
+    width: auto;
+    padding: 60px 30px 40px;
+    @include media(568px) {
+      width: 60%;
+    }
+   }
 }
 
 //----------------------------------------
