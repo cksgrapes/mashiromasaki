@@ -1,5 +1,266 @@
 @charset "UTF-8";
 
-/* Header
------------------------------------------------------------------*/
+//----------------------------------------
+// Common
+//----------------------------------------
 
+//----------------------------------------
+// Header
+//----------------------------------------
+
+.header {
+  position: relative;
+  max-width: $wideMax;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  margin: 0 auto;
+  padding: 60px 30px 50px;
+  @include media(568px) {
+    width: 80%;
+  }
+  @include media(both) {
+    padding: 100px 30px 100px;
+  }
+}
+
+//----------------------------------------
+// Toggle area
+//----------------------------------------
+
+.toggleArea {
+  transition: right .4s;
+  position: fixed;
+  top: 0;
+  right: -70%;
+  width: 70%;
+  height: 100%;
+  z-index: 100;
+  @include media(smallsp) {
+    right: -80%;
+    width: 80%;
+  }
+  @include media(568px) {
+    right: -50%;
+    width: 50%;
+  }
+  @include media(both) {
+    right: -380px;
+    width: 380px;
+  }
+}
+
+.toggleContents {
+  overflow: hidden;
+  height: 100%;
+  background:darken($black, 10%);
+  color: $white;
+}
+
+.toggleButton {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: -50px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  padding: 2px 0 0;
+  background:darken($black, 10%);
+  border-radius: 4px 0 0 4px / 4px 0 0 4px;
+  border: none;
+  outline: none;
+  text-align: center;
+  color: $white;
+  @include media(both) {
+    top: 15px;
+  }
+}
+
+.toggleButton_button,
+.toggleButton_line {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+
+.toggleButton_button {
+  position: relative;
+  width: 22px;
+  height: 18px;
+}
+
+.toggleButton_line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: $white;
+  border-radius: 3px;
+  &:nth-of-type(1) {
+    top: 0;
+  }
+  &:nth-of-type(2) {
+    top: 7px;
+  }
+  &:nth-of-type(3) {
+    bottom: 0;
+  }
+}
+
+.toggleButton_text {
+  margin: 4px 0 0;
+  letter-spacing: .1em;
+  @include ffmincho;
+  text-indent: .2em;
+  font-size: 1.1rem;
+}
+
+.toggleArea.active {
+  right: 0;
+  .toggleButton_text {
+    span {
+      display: none;
+    }
+    &::before {
+      content: attr(data-closetext);
+    }
+  }
+  .toggleButton_line:nth-of-type(1) {
+    transform: translateY(6px) rotate(-45deg);
+  }
+  .toggleButton_line:nth-of-type(2) {
+    transform: translateY(-1px) rotate(45deg);
+  }
+  .toggleButton_line:nth-of-type(3) {
+    opacity: 0;
+  }
+}
+
+//----------------------------------------
+// Global navigation
+//----------------------------------------
+
+.globalNavigation {
+  margin: 15px;
+  text-align: left;
+}
+
+.globalNavigation_item {
+  &:not(:first-child) {
+    border-top: 1px solid lighten($black, 5%);
+  }
+}
+
+.globalNavigation_link {
+  transition: transform .3s;
+  position: relative;
+  display: block;
+  padding: 15px;
+  letter-spacing: .1em;
+  @include ffmincho;
+  font-size: 1.5rem;
+  color: darken($white, 15%);
+  span {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: darken($white, 50%);
+  }
+  @include media(pc) {
+    &:hover {
+      transform: translateX(-10px);
+    }
+  }
+}
+
+//----------------------------------------
+// Searchbox
+//----------------------------------------
+
+.searchBox {
+  margin: 20px 20px 30px;
+  text-align: left;
+  .form_item {
+    border-color: lighten($black, 5%);
+  }
+  .form_name {
+    color: darken($white, 40%);
+  }
+  .form_text {
+    transition: background .3s;
+    background-color: darken($black, 4%);
+    color: darken($white, 15%);
+    @include media(pc) {
+      &:focus {
+        background-color: lighten($black, 4%);
+      }
+    }
+  }
+  .button {
+    font-size: 1.3rem;
+    background: lighten($black, 5%);
+    color: darken($white, 25%);
+    @include media(pc) {
+      background: lighten($black, 0);
+      color: darken($white, 40%);
+      &:hover {
+        background: lighten($black, 10%);
+        color: darken($white, 30%);
+      }
+    }
+  }
+}
+
+//----------------------------------------
+// Main
+//----------------------------------------
+
+.main {
+  max-width: $wideMax;
+  margin: 0 auto;
+  padding: 0 30px 80px;
+  @include media(both) {
+    padding-bottom: 100px;
+  }
+}
+
+//----------------------------------------
+// Footer
+//----------------------------------------
+
+//----------------------------------------
+// Notice Wrap
+//----------------------------------------
+
+.noticeWrap {
+  display: none;
+}
+
+//----------------------------------------
+// Profile
+//----------------------------------------
+
+.profile {
+  line-height: 1.8;
+  font-size: 1.4rem;
+  &:not(:nth-of-type(1)) {
+    margin: 1.5em 0 0;
+  }
+}
+
+.profile_name {
+  margin-bottom: .5em;
+  padding: 0 0 0 10px;
+  border-left: 6px solid lighten($black, 65%);
+  font-weight: bold;
+  font-size: 1.3rem;
+  span {
+    display: block;
+    font-size: 1.2rem;
+  }
+}

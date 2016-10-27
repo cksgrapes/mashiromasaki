@@ -19,45 +19,59 @@
 
 
 <header class="header">
-  <div class="logo"><img src="" alt="真性エーテル欠乏症"></div>
-  <div class="toggleButton">
-    <span class="toggleButton_line"></span>
-    <span class="toggleButton_line"></span>
-    <span class="toggleButton_line"></span>
-  </div>
-  <div class="toggleContents">
-    <ul class="globalNavigation">
-      <li class="globalNavigation_item"><a href="/fic/" class="globalNavigation_link">Fictions<span>小説</span></a></li>
-      <li class="globalNavigation_item"><a href="/pic/" class="globalNavigation_link">Pictures<span>イラスト</span></a></li>
-      <li class="globalNavigation_item"><a href="/offline/" class="globalNavigation_link">Offline<span>オフライン情報</span></a></li>
-      <li class="globalNavigation_item"><a href="/blog/" class="globalNavigation_link">Blog<span>ブログ</span></a></li>
-      <li class="globalNavigation_item"><a href="/#author" class="globalNavigation_link">Author<span>作者</span></a></li>
-      <li class="globalNavigation_item"><a href="/#contact" class="globalNavigation_link">Contact<span>お問い合わせ</span></a></li>
-    </ul>
-    <form action="" class="searchBox" id="searchBox">
-      <input type="text" name="s" placeholder="キーワード">
-      <!-- <dl class="searchBox_item">
-        <dt class="searchBox_name">ジャンル</dt>
-        <dd class="searchBox_content">
-          <select name="genre">
-            <option>テニスの王子様</option>
-            <option>遙かなる時空の中で</option>
-          </select>
-        </dd>
-      </dl> -->
-      <dl class="searchBox_item">
-        <dt class="searchBox_name">形式</dt>
-        <dd class="searchBox_content">
-          <input type="checkbox" name="format" id="formatFic"><label for="formatFic">小説</label>
-          <input type="checkbox" name="format" id="formatPic"><label for="formatPic">イラスト</label>
-        </dd>
-      </dl>
-      <p class="searchBox_actions">
-        <input type="submit" name="actionSubmit" value="検索">
-        <input type="button" name="actionClear" value="クリア">
-      </p>
-    </form>
-  </div>
+  <div class="logo"><img src="/assets/img/logo.svg" alt="真性エーテル欠乏症" class="logo_img"></div>
+  <div class="toggleArea">
+    <div class="toggleContents">
+      <ul class="globalNavigation">
+        <li class="globalNavigation_item"><a href="/fic/" class="globalNavigation_link">Fictions<span>小説</span></a></li>
+        <li class="globalNavigation_item"><a href="/pic/" class="globalNavigation_link">Pictures<span>イラスト</span></a></li>
+        <li class="globalNavigation_item"><a href="/offline/" class="globalNavigation_link">Offline<span>オフライン情報</span></a></li>
+        <li class="globalNavigation_item"><a href="/blog/" class="globalNavigation_link">Blog<span>ブログ</span></a></li>
+        <li class="globalNavigation_item"><a href="/#author" class="globalNavigation_link">Author<span>作者</span></a></li>
+        <li class="globalNavigation_item"><a href="/#contact" class="globalNavigation_link">Contact<span>お問い合わせ</span></a></li>
+      </ul>
+      <form action="" class="form searchBox" id="searchBox">
+        <!-- <dl class="searchBox_item">
+          <dt class="searchBox_name">ジャンル</dt>
+          <dd class="searchBox_content">
+            <select name="genre">
+              <option>テニスの王子様</option>
+              <option>遙かなる時空の中で</option>
+            </select>
+          </dd>
+        </dl> -->
+        <dl class="form_item">
+          <dt class="form_name">キーワード</dt>
+          <dd class="form_content">
+            <input type="text" name="s" class="form_text">
+          </dd>
+        </dl>
+        <dl class="form_item">
+          <dt class="form_name">形式</dt>
+          <dd class="form_content">
+            <div class="form_check">
+              <input type="checkbox" name="format" id="formatFic" class="form_check_input" checked><label for="formatFic" class="form_check_label">小説</label>
+            </div>
+            <div class="form_check">
+              <input type="checkbox" name="format" id="formatPic" class="form_check_input" checked><label for="formatPic" class="form_check_label">イラスト</label>
+            </div>
+          </dd>
+        </dl>
+        <p class="form_actions">
+          <input type="submit" name="actionSubmit" value="作品を検索する" class="button">
+        </p>
+      </form>
+    </div><!-- /.toggleContents -->
+    <button class="toggleButton">
+      <div class="toggleButton_button">
+        <span class="toggleButton_line"></span>
+        <span class="toggleButton_line"></span>
+        <span class="toggleButton_line"></span>
+      </div>
+      <!-- <img src="/assets/img/icon_settings.svg" alt="" class="toggleButton_icon"> -->
+      <div class="toggleButton_text" data-closetext="close"><span>menu</span></div>
+    </button><!-- /.toggleButton -->
+  </div><!-- /.toggleArea -->
 </header>
 
 

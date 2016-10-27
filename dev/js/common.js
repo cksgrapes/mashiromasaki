@@ -9,16 +9,15 @@ local.$window = $(window);
   common.init = function() {
     setWindowWidth();
     setMenuScroll();
-    setMenuToggle();
+    setToggleMenu();
+    // setMasonry();
     setAnchor();
-    setCurrentLocation();
   };
 
   common.resize = function() {
     local.$window.on('load resize', function(){
       setWindowWidth();
       setMenuScroll();
-      setTabChange();
     });
   }
 
@@ -28,38 +27,38 @@ local.$window = $(window);
   };
 
   var setMenuScroll = function() {
-    if (is_mobile) {
-      $('.js-menuScroll').perfectScrollbar();
-    } else {
-      $('.js-menuScroll').perfectScrollbar('destroy');
-    }
+    $('.toggleContents').perfectScrollbar();
   };
 
-  var setMenuToggle = function() {
-    var cls = 'menuOpen';
-    $('.js-menuButton').on('click', function(){
-        if (local.$body.hasClass(cls)) {
-          local.$body.removeClass(cls);
-        } else {
-          local.$body.addClass(cls);
+  var setToggleMenu = function() {
+    var $button = $('.toggleButton');
+    $button.on('click', function(){
+      var $this = $(this),
+          $area = $this.parent();
+      if($area.hasClass('active')) {
+        $area.removeClass('active');
+      } else {
+        $area.addClass('active');
+      }
+    });
+    $(document).on('click', function(event) {
+      if (!$(event.target).closest('.toggleArea').length) {
+        if ($('.toggleArea').hasClass('active')) {
+          $button.trigger('click');
         }
+      }
     });
   };
 
-  var setTabChange = function() {
-    var tab = $('.js-tabchange');
-    if (tab.length <= 0) { return; }
-    tab.each(function(){
-      var btn = $(this).find('li'),
-        content = $(this).next().find('.js-tabchange-content'),
-        index;
-      btn.on('click', function(){
-          index = btn.index(this);
-          content.hide().eq(index).show();
-          btn.removeClass('current');
-          $(this).addClass('current');
-      });
-    });
+  var setMasonry = function() {
+    $('.column').masonry({
+      // set itemSelector so .grid-sizer is not used in layout
+      itemSelector: '.col',
+      // use element for option
+      columnWidth: '.columnSizer',
+      gutter: '.columnGutter',
+      percentPosition: true
+    })
   };
 
   var setAnchor = function(offset) {
@@ -74,17 +73,6 @@ local.$window = $(window);
         if (trg == '#pagetop') { $('html,body').animate({scrollTop: 0}, 500); }
         $('html,body').animate({scrollTop: (trgpos - offset - 113)}, 500);
       });
-    });
-  };
-
-  var setCurrentLocation = function () {
-    var url  = location.pathname.split('/')[2],
-        $nav = $('.headerMenu_toggleContents').find('.globalPages');
-    $nav.find('a').each(function(){
-      var link = $(this).attr('href');
-      if ( link.indexOf(url) > 0 ) {
-        $(this).parent().addClass('active');
-      }
     });
   };
 

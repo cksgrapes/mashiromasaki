@@ -1,2 +1,268 @@
 @charset "UTF-8";
 
+//----------------------------------------
+// heading
+//----------------------------------------
+
+.heading-02 {
+  margin: 0 0 30px;
+  padding: 10px 0 0;
+  border-top: 1px solid lighten($black, 75%);
+  letter-spacing: .2em;
+  @include ffmincho;
+  font-weight: normal;
+  font-size: 1.5rem;
+  @include media(both) {
+    font-size: 1.7rem;
+  }
+  &::first-letter {
+    transform: rotate(-15deg);
+    margin: 0 5px 0 0;
+    padding: 3px 5px;
+    background: #333;
+    letter-spacing: normal;
+    font-size: 1.8rem;
+    color: $white;
+    @include media(both) {
+      padding: 4px 6px;
+      font-size: 2rem;
+    }
+  }
+  span {
+    display: block;
+    margin: -15px 0 0;
+    text-align: right;
+    font-size: 1.2rem;
+    color: $gray;
+    @include media(both) {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+//----------------------------------------
+// Column
+//----------------------------------------
+
+$gutter: 60px;
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  margin: $gutter*-1 0 0;
+}
+
+.col {
+  float: left;
+  width: 100%;
+  margin: $gutter 0 0;
+  @include media(both) {
+    .column-2col>& {
+      width: 47.5%;
+      &:not(:nth-child(2n)) {
+        margin-right: 5%;
+      }
+    }
+  }
+}
+
+//----------------------------------------
+// Button
+//----------------------------------------
+
+.button {
+  transition: background .2s, color .2s;
+  appearance: none;
+  width: 100%;
+  height: 40px;
+  background: lighten($black, 5%);
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: $white;
+  cursor: pointer;
+  & + & {
+    margin-top: 10px;
+  }
+  @include media(pc) {
+    background: lighten($black, 15%);
+    color: darken($white, 5%);
+    &:hover {
+      background: lighten($black, 5%);
+      color: $white;
+    }
+  }
+}
+
+.button-disable {
+  background: lighten($black, 60%);
+  font-weight: normal;
+  color: darken($white, 5%);
+}
+
+.button-notEm {
+  background: lighten($black, 75%);
+  border: 1px solid lighten($black, 70%);
+  font-size: 1.3rem;
+  color: $black;
+}
+
+//----------------------------------------
+// list
+//----------------------------------------
+
+.list_item {
+  &:not(:first-child) {
+    margin: 20px 0 0;
+  }
+}
+
+.list_link {
+  display: block;
+  // margin: 0 0 10px;
+  padding: 15px;
+  // background: lighten($black, 75%);
+  border-radius: 4px;
+  border: 1px solid lighten($black, 70%);
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color: $black;
+  @include media(both) {
+    @include clearfix;
+  }
+}
+
+.list_title {
+  margin: 0 0 5px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.list_content {
+  margin: .5em 0;
+}
+
+.list_image {
+  margin-bottom: 10px;
+  text-align: center;
+  @include media(both) {
+    float: left;
+    width: 33%;
+    margin: 0 15px 0 0;
+  }
+}
+
+.list_data {
+  @include media(both) {
+    overflow: hidden;
+  }
+}
+
+.list_series {
+  display: inline-block;
+  margin: 4px 0 10px;
+  padding: 0 10px;
+  background: lighten($black, 75%);
+  color: lighten($black, 45%);
+}
+
+.list_tag,
+.list_date {
+  color: lighten($black, 45%);
+}
+
+//----------------------------------------
+// Form
+//----------------------------------------
+
+.form_item {
+  padding: 15px;
+  border: 1px solid lighten($black, 70%);
+  font-weight: bold;
+  font-size: 1.2rem;
+  &:not(:first-child) {
+    margin: 10px 0 0;
+  }
+}
+
+%formPartsBase {
+  appearance: none;
+  width: 100%;
+  margin: 10px 0 0;
+  border: none;
+  outline: none;
+  background: lighten($black, 75%);
+  font-size: 1.3rem;
+}
+
+.form_text {
+  @extend %formPartsBase;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.form_textarea {
+  @extend %formPartsBase;
+  height: 100px;
+  padding: 10px;
+  resize: none;
+}
+
+.form_check {
+  border-top: 1px solid lighten($black, 5%);
+  &:first-child {
+    margin-top: 10px;
+  }
+}
+
+.form_check_input {
+  display: none;
+}
+
+.form_check_label {
+  transition: color .2s;
+  position: relative;
+  display: block;
+  padding: 16px 15px 16px 32px;
+  font-weight: normal;
+  color: darken($white, 50%);
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    display: inline-block;
+    content: "";
+    width: 22px;
+    height: 22px;
+    border-radius: 22px;
+    border: 1px solid lighten($black, 15%);
+    box-sizing: border-box;
+  }
+  &::after {
+    transition: opacity .2s;
+    opacity: 0;
+    position: absolute;
+    top: 6px+12;
+    left: 6px;
+    display: inline-block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: lighten($black, 30%);
+  }
+  .form_check_input:checked+& {
+    font-weight: bold;
+    color: darken($white, 15%);
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.form_actions {
+  margin: 10px 0 0;
+}

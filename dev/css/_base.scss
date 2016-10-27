@@ -17,17 +17,12 @@ html {
 
 body {
   height: 100%;
-  @include media(sp) {
-    &.menuOpen {
-      overflow: hidden;
-    }
-  }
+  color: $black;
 }
 
 body, div, p, form, input, select, option, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, address {
   margin: 0;
   padding: 0;
-  font-size: 1.4rem;
 }
 
 ul, li {

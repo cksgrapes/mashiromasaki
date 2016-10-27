@@ -7,6 +7,11 @@
   }
 }
 
+//font-family
+@mixin ffmincho {
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN", "Hiragino Mincho Pro", "ＭＳ 明朝", serif;
+}
+
 //media
 
 // original mixin
@@ -21,20 +26,17 @@ $bpSP: 767px;
 // breakpoint {sp,tablet,pc,full}
 // @include media(sp){}
 @mixin media($point) {
-  @if $point == tablet {
-    @media print, screen and (min-width: $bpTB)  { @content ; }
-  }
-  @else if $point == pc {
-    @media print, screen and (min-width: $bpPC) { @content ; }
-  }
-  @else if $point == full {
-    @media print, screen and (min-width: $bpFull) { @content ; }
+  @if $point == pc {
+    @media print, screen and (min-width: 1025px)  { @content ; }
   }
   @else if $point == both {
-    @media print, screen and (min-width: 769px) { @content ; }
+    @media print, screen and (min-width: 768px) { @content ; }
   }
-  @else if $point == sp {
-    @media print, screen and (max-width: 768px)  { @content ; }
+  @else if $point == tablet {
+    @media print, screen and (min-width: 768px) and (max-width: 1024px) { @content ; }
+  }
+ @else if $point == sp {
+    @media print, screen and (max-width: 767px)  { @content ; }
   }
   @else if $point == smallsp {
     @media print, screen and (max-width: 320px)  { @content ; }
@@ -43,6 +45,7 @@ $bpSP: 767px;
     @media print, screen and (min-width: $point) { @content ; }
   }
 }
+
 
 //sprite for Retina*2
 @mixin sprite-width($sprite, $x:auto) {
