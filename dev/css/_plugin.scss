@@ -112,3 +112,29 @@
     opacity: 0.9; }
     .ps-container:hover > .ps-scrollbar-y-rail:hover > .ps-scrollbar-y {
       background-color: #999; }
+
+
+//infiniteScroll
+#infscr-loading {
+  width: 100%;
+  text-align: center;
+  img {
+    display: none;
+  }
+}
+
+.loading {
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0 0;
+  font-size: 2.4rem;
+  .fa {
+    animation: spin 1.6s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}

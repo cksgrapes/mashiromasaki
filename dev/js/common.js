@@ -9,8 +9,9 @@ local.$window = $(window);
   common.init = function() {
     setWindowWidth();
     setMenuScroll();
-    setToggleMenu();
-    // setMasonry();
+    setToggleMenu('.toggleButton','.toggleArea');
+    setToggleMenu('.controls_button','.controls');
+    setMasonry();
     setAnchor();
   };
 
@@ -30,20 +31,22 @@ local.$window = $(window);
     $('.toggleContents').perfectScrollbar();
   };
 
-  var setToggleMenu = function() {
-    var $button = $('.toggleButton');
+  var setToggleMenu = function(button,area) {
+    var $button = $(button),
+        areacls = area,
+        activeCls = 'active';
     $button.on('click', function(){
       var $this = $(this),
           $area = $this.parent();
-      if($area.hasClass('active')) {
-        $area.removeClass('active');
+      if($area.hasClass(activeCls)) {
+        $area.removeClass(activeCls);
       } else {
-        $area.addClass('active');
+        $area.addClass(activeCls);
       }
     });
     $(document).on('click', function(event) {
-      if (!$(event.target).closest('.toggleArea').length) {
-        if ($('.toggleArea').hasClass('active')) {
+      if (!$(event.target).closest(areacls).length) {
+        if ($(areacls).hasClass(activeCls)) {
           $button.trigger('click');
         }
       }
@@ -51,14 +54,33 @@ local.$window = $(window);
   };
 
   var setMasonry = function() {
-    $('.column').masonry({
-      // set itemSelector so .grid-sizer is not used in layout
+    if (!($('.masonry').length)) {
+      return;
+    }
+    var $container = $('.masonry');
+    $container.masonry({
       itemSelector: '.col',
-      // use element for option
       columnWidth: '.columnSizer',
       gutter: '.columnGutter',
       percentPosition: true
-    })
+    });
+    $container.infinitescroll({
+      navSelector  : '.navigation',
+      nextSelector : '.navigation a',
+      itemSelector : '.col',
+      contentSelector : '.column',
+      dataType: 'php',
+      loading: {
+        msgText: '<div class="loading"><i class="fa fa-spinner" aria-hidden="true"></i></div>',
+        finishedMsg: '',
+        selector: '.main',
+        speed: 1
+      }
+    },
+    function( newElements ) {
+      var $newElems = $( newElements );
+      $container.masonry( 'appended', $newElems, true );
+    });
   };
 
   var setAnchor = function(offset) {

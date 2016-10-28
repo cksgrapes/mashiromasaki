@@ -103,6 +103,7 @@ gulp.task('sass', function(){
  */
 gulp.task('js', function() {
   return gulp.src(develop.js)
+  .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(sourcemaps.init())
   .pipe(uglify({preserveComments: 'license'}))
   .pipe(sourcemaps.write('.'))
@@ -115,6 +116,7 @@ gulp.task('js', function() {
  */
  var libJs = function(src,dest) {
   return gulp.src(src)
+  .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(sourcemaps.init())
   .pipe(concat('lib.js'))
   .pipe(sourcemaps.write('.'))
@@ -134,6 +136,7 @@ gulp.task('libJs', function() {
  */
 gulp.task('image', function() {
   return gulp.src(develop.image)
+  .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
   .pipe(changed(release.root))
   .pipe(imagemin({
     // jpgをロスレス圧縮（画質を落とさず、メタデータを削除）。

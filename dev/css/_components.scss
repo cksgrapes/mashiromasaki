@@ -47,13 +47,16 @@
 $gutter: 60px;
 
 .column {
+  @include clearfix;
   display: flex;
   flex-wrap: wrap;
   margin: $gutter*-1 0 0;
+  &.list {
+    margin: -20px 0 0;
+  }
 }
 
 .col {
-  float: left;
   width: 100%;
   margin: $gutter 0 0;
   @include media(both) {
@@ -62,6 +65,22 @@ $gutter: 60px;
       &:not(:nth-child(2n)) {
         margin-right: 5%;
       }
+    }
+  }
+}
+
+.columnSizer {
+  @include media(both) {
+    .column-2col>& {
+      width: 47.5%;
+    }
+  }
+}
+
+.columnGutter {
+  @include media(both) {
+    .column-2col>& {
+      width: 5%;
     }
   }
 }
@@ -117,18 +136,31 @@ $gutter: 60px;
   &:not(:first-child) {
     margin: 20px 0 0;
   }
+  .column & {
+    &:first-child {
+      margin: 20px 0 0;
+    }
+  }
 }
 
 .list_link {
+  transition: opacity .3s;
   display: block;
   padding: 15px;
   border-radius: 4px;
+  background: $white;
   border: 1px solid lighten($black, 70%);
   line-height: 1.6;
   font-size: 1.2rem;
   color: $black;
   @include media(both) {
     @include clearfix;
+  }
+  @include media(pc) {
+    opacity: 1;
+    &:hover {
+      opacity: .5;
+    }
   }
 }
 
@@ -186,6 +218,7 @@ $gutter: 60px;
 }
 
 %formPartsBase {
+  transition: background .3s;
   appearance: none;
   width: 100%;
   margin: 10px 0 0;
@@ -193,6 +226,11 @@ $gutter: 60px;
   outline: none;
   background: lighten($black, 75%);
   font-size: 1.3rem;
+  @include media(pc) {
+    &:focus {
+      background: lighten($black, 65%);
+    }
+  }
 }
 
 .form_text {
