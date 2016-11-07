@@ -207,6 +207,9 @@ html {
   text-align: left;
   .form_item {
     border-color: lighten($black, 5%);
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
   }
   .form_name {
     color: darken($white, 40%);
@@ -220,6 +223,9 @@ html {
         background-color: lighten($black, 4%);
       }
     }
+  }
+  .form_actions {
+    margin-top: 20px;
   }
   .button {
     font-size: 1.3rem;
@@ -247,6 +253,48 @@ html {
   @include media(both) {
     padding-bottom: 100px;
   }
+}
+
+//----------------------------------------
+// Work
+//----------------------------------------
+
+.work {
+  @include media(both) {
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.work_content {
+  margin: 50px 0;
+  line-height: 1.8;
+  font-size: 1.4rem;
+  @include media(both) {
+    font-size: 1.6rem;
+  }
+  p {
+    text-indent: 1em;
+    &.noIndent {
+      text-indent: -.5em;
+    }
+  }
+}
+
+.work_desc {
+  margin-bottom: 50px;
+  padding: 15px;
+  line-height: 1.8;
+  font-size: 1.3rem;
+  border: 1px solid darken($white, 10%);
+  background: darken($white, 5%);
+  color: lighten($black, 40%);
+}
+
+.work_date {
+  text-align: right;
+  font-size: 1.2rem;
 }
 
 //----------------------------------------
@@ -300,6 +348,61 @@ html {
   span {
     display: none;
   }
+}
+
+//----------------------------------------
+// Change font size
+//----------------------------------------
+
+.changeFontSize {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: none;
+  padding: 20px 30px;
+  box-shadow:0px 0px 4px 2px rgba(0,0,0,.3);
+  transform: translate(-50%,-50%);
+  background: $black;
+  font-size: 1.2rem;
+  color: $white;
+  @include media(both) {
+    padding: 30px 60px;
+  }
+  &.active {
+    display: block;
+  }
+}
+
+.changeFontSize_heading {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: darken($white, 40%);
+  @include media(both) {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+  }
+}
+
+.changeFontSize_set {
+  width: 132px+30;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.changeFontSize_button {
+  display: inline-block;
+  appearance: none;
+  outline: none;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: $white;
 }
 
 //----------------------------------------

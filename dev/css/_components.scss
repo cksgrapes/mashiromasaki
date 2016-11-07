@@ -4,6 +4,21 @@
 // heading
 //----------------------------------------
 
+.heading-01 {
+  margin: 0 0 30px;
+  padding: 15px 0 0;
+  border-top: 1px solid lighten($black, 75%);
+  letter-spacing: .2em;
+  line-height: 1.6;
+  @include ffmincho;
+  text-align: center;
+  font-weight: normal;
+  font-size: 2.2rem;
+  @include media(both) {
+    font-size: 2.8rem;
+  }
+}
+
 .heading-02 {
   margin: 0 0 30px;
   padding: 10px 0 0;
@@ -213,7 +228,7 @@ $gutter: 60px;
   font-weight: bold;
   font-size: 1.2rem;
   &:not(:first-child) {
-    margin: 10px 0 0;
+    margin: 15px 0 0;
   }
 }
 
@@ -300,5 +315,5 @@ $gutter: 60px;
 }
 
 .form_actions {
-  margin: 10px 0 0;
+  margin: 15px 0 0;
 }

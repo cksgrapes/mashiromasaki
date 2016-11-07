@@ -722,6 +722,18 @@ a {
 	text-decoration: none;
 }
 
+.heading-01 {
+	margin: 0 0 30px;
+	padding: 15px 0 0;
+	border-top: 1px solid #f2f2f2;
+	font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', 'ＭＳ 明朝', serif;
+	font-size: 2.2rem;
+	font-weight: normal;
+	line-height: 1.6;
+	text-align: center;
+	letter-spacing: .2em;
+}
+
 .heading-02 {
 	margin: 0 0 30px;
 	padding: 10px 0 0;
@@ -869,7 +881,7 @@ a {
 }
 
 .form_item:not(:first-child) {
-	margin: 10px 0 0;
+	margin: 15px 0 0;
 }
 
 .form_text,
@@ -959,7 +971,7 @@ a {
 }
 
 .form_actions {
-	margin: 10px 0 0;
+	margin: 15px 0 0;
 }
 
 html {
@@ -1131,6 +1143,10 @@ html {
 	border-color: #404040;
 }
 
+.searchBox .form_item:not(:first-child) {
+	margin-top: 20px;
+}
+
 .searchBox .form_name {
 	color: #999;
 }
@@ -1140,6 +1156,10 @@ html {
 	color: #d9d9d9;
 	-webkit-transition: background .3s;
 	transition: background .3s;
+}
+
+.searchBox .form_actions {
+	margin-top: 20px;
 }
 
 .searchBox .button {
@@ -1152,6 +1172,35 @@ html {
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 0 30px 80px;
+}
+
+.work_content {
+	margin: 50px 0;
+	font-size: 1.4rem;
+	line-height: 1.8;
+}
+
+.work_content p {
+	text-indent: 1em;
+}
+
+.work_content p.noIndent {
+	text-indent: -.5em;
+}
+
+.work_desc {
+	margin-bottom: 50px;
+	padding: 15px;
+	border: 1px solid #e6e6e6;
+	background: #f2f2f2;
+	color: #999;
+	font-size: 1.3rem;
+	line-height: 1.8;
+}
+
+.work_date {
+	font-size: 1.2rem;
+	text-align: right;
 }
 
 .controls {
@@ -1218,6 +1267,60 @@ html {
 	display: none;
 }
 
+.changeFontSize {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	padding: 20px 30px;
+	background: #333;
+	box-shadow: 0 0 4px 2px rgba(0, 0, 0, .3);
+	color: #fff;
+	font-size: 1.2rem;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.changeFontSize.active {
+	display: block;
+}
+
+.changeFontSize_heading {
+	margin-bottom: 15px;
+	color: #999;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.changeFontSize_set {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	width: 162px;
+	margin: 0 auto;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.changeFontSize_button {
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	border-radius: 4px;
+	outline: none;
+	color: #fff;
+	font-size: 1.5rem;
+	line-height: 44px;
+	text-align: center;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
 .noticeWrap {
 	display: none;
 }
@@ -1266,6 +1369,10 @@ html {
 }
 
 @media print, screen and (min-width: 768px) {
+
+.heading-01 {
+	font-size: 2.8rem;
+}
 
 .heading-02 {
 	font-size: 1.7rem;
@@ -1330,9 +1437,28 @@ html {
 	padding-bottom: 100px;
 }
 
+.work {
+	width: 700px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.work_content {
+	font-size: 1.6rem;
+}
+
 .controls {
 	top: 80px;
 	bottom: auto;
+}
+
+.changeFontSize {
+	padding: 30px 60px;
+}
+
+.changeFontSize_heading {
+	margin-bottom: 20px;
+	font-size: 1.4rem;
 }
 
 }

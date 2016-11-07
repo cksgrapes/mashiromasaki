@@ -1,63 +1,125 @@
 'use strict';
 
-var local = local || {}, is_mobile;
-
-local.$body = $('body');
-local.$window = $(window);
+var ETHER = ETHER || {
+    d       : document,
+    w       : window,
+    $window : $(window),
+    $body   : $('body')
+  };
 
 (function(common){
   common.init = function() {
-    setWindowWidth();
-    setMenuScroll();
-    setToggleMenu('.toggleButton','.toggleArea');
-    setToggleMenu('.controls_button','.controls');
     setMasonry();
-    setAnchor();
+    // setAnchor();
+    setToggleMenu();
+    setChangeFontSize();
+    setTypesetting();
   };
 
   common.resize = function() {
-    local.$window.on('load resize', function(){
-      setWindowWidth();
+    ETHER.$window.on('load resize', function(){
+      setIsMobile();
       setMenuScroll();
     });
-  }
-
-  var setWindowWidth = function() {
-    local.width = window.innerWidth;
-    is_mobile   = (local.width < 768) ? true : false;
   };
+
+  common.scroll = function() {
+    ETHER.$window.on('scroll', function(){
+      ETHER.scroll = ETHER.$window.scrollTop();
+    });
+  };
+
+  var setIsMobile = function() {
+    var width = ETHER.w.innerWidth;
+    ETHER.isMobile = (width < 768) ? true : false;
+  };
+
 
   var setMenuScroll = function() {
     $('.toggleContents').perfectScrollbar();
   };
 
-  var setToggleMenu = function(button,area) {
-    var $button = $(button),
-        areacls = area,
-        activeCls = 'active';
-    $button.on('click', function(){
-      var $this = $(this),
-          $area = $this.parent();
-      if($area.hasClass(activeCls)) {
-        $area.removeClass(activeCls);
-      } else {
-        $area.addClass(activeCls);
+  var setToggleMenu = function() {
+    var button = ETHER.d.getElementsByClassName('js-toggleMenu'),
+        activeCls = 'active',
+        area,
+        $area;
+    button.len = button.length;
+
+    var init = function() {
+      for (var i = 0; i < button.len; i++) {
+        button[i].addEventListener('click', toggleClass, false);
       }
-    });
-    $(document).on('click', function(event) {
-      if (!$(event.target).closest(areacls).length) {
-        if ($(areacls).hasClass(activeCls)) {
-          $button.trigger('click');
+      ETHER.d.addEventListener('click', toggleOpenClose, false);
+    };
+
+    var toggleClass = function() {
+      area       = this.parentNode;
+      $area      = $(area);
+      area.class = area.classList;
+      if (area.class.contains(activeCls)) {
+        $(area).removeClass(activeCls);
+      } else {
+        $(area).addClass(activeCls);
+      }
+    };
+
+    var toggleOpenClose = function() {
+      if ($(event.target).closest(area).length < 1) {
+        for (var i = 0; i < button.len; i++) {
+          if (button[i].parentNode.classList.contains('active')) {
+            $(button[i]).trigger('click');
+          }
         }
       }
-    });
+    };
+
+    init();
+  };
+
+  var setChangeFontSize = function() {
+    var button  = ETHER.d.getElementsByClassName('js-changeFontSize'),
+        panelID = button[0].getAttribute('href'),
+        panel   = ETHER.d.getElementById(panelID.substr(1)),
+        $panel = $(panel);
+    button[0].addEventListener('click', function(e){
+      e.preventDefault();
+      if (panel.classList.contains('active')) {
+        $panel.removeClass('active');
+      } else {
+        $panel.addClass('active');
+      }
+    }, false);
+
+    ETHER.d.addEventListener('click', function(){
+      if ($(event.target).closest(panel).length < 1) {
+        $(button[0]).trigger('click');
+      }
+    }, false)
+  };
+
+  var setTypesetting = function() {
+    var work  = ETHER.d.getElementsByClassName('work'),
+        $p    = $(work[0]).find('.work_content>p'),
+        len   = $p.length,
+        match;
+    if (work.length < 1) {
+      return;
+    }
+    for (var i = 0; i < len; i++) {
+      match = $p[i].innerHTML.match(/[「（]/);
+      if (match !== null && match.index === 0) {
+        $($p[i]).addClass('noIndent');
+      }
+    }
   };
 
   var setMasonry = function() {
-    if (!($('.masonry').length)) {
+    var container = ETHER.d.getElementsByClassName('masonry');
+    if (container.length < 1) {
       return;
     }
-    var $container = $('.masonry');
+    var $container = $(container);
     $container.masonry({
       itemSelector: '.col',
       columnWidth: '.columnSizer',
@@ -84,12 +146,14 @@ local.$window = $(window);
   };
 
   var setAnchor = function(offset) {
-    var offset = offset || 0;
-    var trg,trgpos;
+    var offset = offset || 0,
+        trg,
+        trgpos;
     $('a[href^="#"]').each(function() {
       $(this).on('click',function(e) {
         e.preventDefault();
         trg = $(this).attr('href');
+        console.log($(trg).offset().top);
         trgpos = trg != '#pagetop' && $(trg).offset().top;
 
         if (trg == '#pagetop') { $('html,body').animate({scrollTop: 0}, 500); }
@@ -98,7 +162,10 @@ local.$window = $(window);
     });
   };
 
-}(local.common = local.common || {}));
+})(ETHER.common = ETHER.common || {});
 
-local.common.init();
-local.common.resize();
+ETHER.common.init();
+ETHER.common.resize();
+ETHER.common.scroll();
+
+

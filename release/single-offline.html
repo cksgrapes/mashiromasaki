@@ -22,6 +22,14 @@
 <header class="header">
   <div class="logo"><a href="/"><img src="/assets/img/logo.svg" alt="真性エーテル欠乏症" class="logo_img"></a></div>
   <div class="toggleArea">
+    <button class="toggleButton js-toggleMenu">
+      <div class="toggleButton_button">
+        <span class="toggleButton_line"></span>
+        <span class="toggleButton_line"></span>
+        <span class="toggleButton_line"></span>
+      </div>
+      <div class="toggleButton_text" data-closetext="close"><span>menu</span></div>
+    </button><!-- /.toggleButton -->
     <div class="toggleContents">
       <ul class="globalNavigation">
         <li class="globalNavigation_item"><a href="/" class="globalNavigation_link">Home<span>トップページ</span></a></li>
@@ -64,14 +72,6 @@
         </p>
       </form>
     </div><!-- /.toggleContents -->
-    <button class="toggleButton">
-      <div class="toggleButton_button">
-        <span class="toggleButton_line"></span>
-        <span class="toggleButton_line"></span>
-        <span class="toggleButton_line"></span>
-      </div>
-      <div class="toggleButton_text" data-closetext="close"><span>menu</span></div>
-    </button><!-- /.toggleButton -->
   </div><!-- /.toggleArea -->
 </header>
 
@@ -148,10 +148,21 @@
 
   </main>
 
-  <div class="controls">
-    <a href="#pagetop" class="controls_item"><img src="" alt="ページの上部にもどる"></a>
-    <a href="#searchBox" class="controls_item"><img src="" alt="コンテンツを検索する"></a>
-  </div>
+<div class="controls" data-itemcount="3">
+  <button class="controls_item controls_button js-toggleMenu"><i class="fa  fa-ellipsis-h" aria-hidden="true"></i></button>
+  <a href="#pagetop" class="controls_item"><i class="fa fa-angle-double-up" aria-hidden="true"></i><span>ページの上部にもどる</span></a>
+  <a href="#changeFontSize" class="controls_item js-changeFontSize"><i class="fa fa-font" aria-hidden="true"></i><span>フォントサイズを変更する</span></a>
+  <a href="#searchBox" class="controls_item"><i class="fa fa-search" aria-hidden="true"></i><span>コンテンツを検索する</span></a>
+</div>
+
+<div class="changeFontSize" id="changeFontSize">
+  <p class="changeFontSize_heading">文字サイズ変更</p>
+  <ul class="changeFontSize_set">
+    <li class="changeFontSize_item"><button class="changeFontSize_button button">大</button></li>
+    <li class="changeFontSize_item"><button class="changeFontSize_button button">中</button></li>
+    <li class="changeFontSize_item"><button class="changeFontSize_button button">小</button></li>
+  </ul>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="/assets/js/lib.js"></script>

@@ -12,6 +12,14 @@ if (pagename === 'top' ) {
 <header class="header">
   <<%- headerTitleTag %> class="logo"><a href="/"><img src="/assets/img/logo.svg" alt="真性エーテル欠乏症" class="logo_img"></a></<%- headerTitleTag %>>
   <div class="toggleArea">
+    <button class="toggleButton js-toggleMenu">
+      <div class="toggleButton_button">
+        <span class="toggleButton_line"></span>
+        <span class="toggleButton_line"></span>
+        <span class="toggleButton_line"></span>
+      </div>
+      <div class="toggleButton_text" data-closetext="close"><span>menu</span></div>
+    </button><!-- /.toggleButton -->
     <div class="toggleContents">
       <ul class="globalNavigation">
         <li class="globalNavigation_item"><a href="/" class="globalNavigation_link">Home<span>トップページ</span></a></li>
@@ -54,14 +62,6 @@ if (pagename === 'top' ) {
         </p>
       </form>
     </div><!-- /.toggleContents -->
-    <button class="toggleButton">
-      <div class="toggleButton_button">
-        <span class="toggleButton_line"></span>
-        <span class="toggleButton_line"></span>
-        <span class="toggleButton_line"></span>
-      </div>
-      <div class="toggleButton_text" data-closetext="close"><span>menu</span></div>
-    </button><!-- /.toggleButton -->
   </div><!-- /.toggleArea -->
 </header>
 
